@@ -1,20 +1,50 @@
-import React, { Component } from 'react'
-import { Navbar, Form, InputGroup, FormControl, Button } from 'react-bootstrap'
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import { AppBar, Toolbar, Typography, Button } from '@material-ui/core';
 
-class Header extends Component{
-    render(){
-        return(
-        <Navbar>
-        <Navbar.Brand href="#home">Navbar with text</Navbar.Brand>
-        <Navbar.Toggle />
-        <Navbar.Collapse className="justify-content-end">
-            <Navbar.Text>
-            Signed in as: <a href="https://www.github.com/tkddls8848">PSI</a>
-            </Navbar.Text>
-        </Navbar.Collapse>
-        </Navbar>
-        )
-    }
+
+const useStyles = makeStyles(theme => ({
+  root: {
+    flexGrow: 1,
+    height: '100px !important'
+  },
+  appBar: {
+    background: '#e0e0e0',
+    boxShadow: 'none'
+  },
+  title: {
+    flexGrow: 1,
+    color: 'black'
+  },
+  button: {
+    background: 'black',
+    marginEnd: '20px'
+  },
+  fab: {
+    margin: theme.spacing(1),
+    background: '#0e1113'
+  }
+}));
+
+export default function Header() {
+  const classes = useStyles();
+
+  return (
+    <div className={classes.root}>
+      <AppBar position="static" className={classes.appBar}>
+        <Toolbar>
+          <Typography variant="h6" className={classes.title}>
+            LOGO
+          </Typography>
+          <Button color="inherit" className={classes.button}>
+            Register
+          </Button>
+          <Button color="inherit" className={classes.button}>
+            Login
+          </Button>
+          
+        </Toolbar>
+      </AppBar>
+    </div>
+  );
 }
-
-export default Header

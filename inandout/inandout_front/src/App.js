@@ -2,28 +2,24 @@ import React, { Component } from 'react'
 import SimpleCard from './SimpleCard'
 import SmallCard from './SmallCard'
 import Header from './Header'
+import Flip from './Flip'
 
 class App extends Component {
-
   render(){
     return(      
       <div className="container">
         <div>
           <Header></Header>
         </div>
-          <div className="card-group" style={{width:"85%", display:"flex", flexDirection:"row"}}>
-            <SimpleCard></SimpleCard>
-            <SimpleCard></SimpleCard>
-            <SimpleCard></SimpleCard>
-            <SimpleCard></SimpleCard>
+        <div className="card-group" style={{width:"100%", display:"flex", flexDirection:"row"}}>
+            <Flip></Flip>
+            <Flip></Flip>
+            <Flip></Flip>
           </div>
-          <div className="card-group" style={{width:"40%", display:"flex", flexDirection:"row"}}>
-            <SmallCard></SmallCard>
-            <SmallCard></SmallCard>
-          </div>
-          <div className="card-group" style={{width:"40%", display:"flex", flexDirection:"row"}}>
-            <SmallCard></SmallCard>
-            <SmallCard></SmallCard>
+          <div className="card-group" style={{width:"100%", display:"flex", flexDirection:"row"}}>
+            <Flip></Flip>
+            <Flip></Flip>
+            <Flip></Flip>
           </div>
       </div>
     )

@@ -39,7 +39,5 @@ export default function SimpleCard() {
         <Button size="small">Learn More</Button>
       </CardActions>
     </Card>
-
-
   );
 }
