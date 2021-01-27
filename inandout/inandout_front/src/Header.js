@@ -1,24 +1,23 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { AppBar, Toolbar, Typography, Button } from '@material-ui/core';
+import { AppBar, Toolbar, Typography, Button, IconButton } from '@material-ui/core';
+import MenuIcon from '@material-ui/icons/Menu';
 
 
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
-    height: '100px !important'
+    height: '100px'
   },
   appBar: {
-    background: '#e0e0e0',
+    background: '#131313',
     boxShadow: 'none'
   },
-  title: {
-    flexGrow: 1,
-    color: 'black'
-  },
   button: {
-    background: 'black',
-    marginEnd: '20px'
+    display: 'flex',
+    flexGrow: 1,
+    color: 'white',
+    float: "right"
   },
   fab: {
     margin: theme.spacing(1),
@@ -31,20 +30,19 @@ export default function Header() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" className={classes.appBar}>
+      <AppBar position="fixed" style={{zIndex: 10000}}>
         <Toolbar>
-          <Typography variant="h6" className={classes.title}>
-            LOGO
-          </Typography>
-          <Button color="inherit" className={classes.button}>
-            Register
-          </Button>
-          <Button color="inherit" className={classes.button}>
-            Login
-          </Button>
-          
+          <IconButton edge="start" color="inherit" aria-label="menu">
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="h6">News</Typography>
+          <div className={classes.button}>
+            <Button color="inherit">알림</Button>
+            <Button color="inherit">문의하기</Button>
+            <Button color="inherit">기타등등</Button>
+          </div>
         </Toolbar>
       </AppBar>
     </div>
-  );
+  )
 }
