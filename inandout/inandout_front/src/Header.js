@@ -1,13 +1,14 @@
 import React from 'react';
+import {Link, Route, BrowserRouter as Router} from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles';
 import { AppBar, Toolbar, Typography, Button, IconButton } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 
 
 const useStyles = makeStyles(theme => ({
-  root: {
+  header: {
     flexGrow: 1,
-    height: '100px'
+    height: '100px',
   },
   appBar: {
     background: '#131313',
@@ -29,17 +30,18 @@ export default function Header() {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
+    <div className={classes.header}>
       <AppBar position="fixed" style={{zIndex: 10000}}>
         <Toolbar>
           <IconButton edge="start" color="inherit" aria-label="menu">
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6">News</Typography>
+          <Typography variant="h6">LOGO</Typography>
           <div className={classes.button}>
-            <Button color="inherit">알림</Button>
             <Button color="inherit">문의하기</Button>
-            <Button color="inherit">기타등등</Button>
+            <Router>              
+              <Button color="inherit"><Link to='/short'>버튼2</Link></Button>          
+            </Router>
           </div>
         </Toolbar>
       </AppBar>

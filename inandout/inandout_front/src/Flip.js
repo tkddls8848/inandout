@@ -24,11 +24,7 @@ const Flip = ({items}) => {
           <List>
               {items.map((item) => {
                 return (
-                  <ListItem
-                  key={item.label}
-                  button
-                  onClick={() => handleModal(item.modal)}
-                >
+                  <ListItem key={item.label} button onClick={() => handleModal(item.modal)}>
                   {item.label}
                 </ListItem>
                 );
